@@ -1,0 +1,42 @@
+{
+  "card_countries": ["AU", "GB", "US"],
+  "AU": {
+    "account_onboard_link" : "https://www.paypal.com/merchantsignup/router/au/wps",
+    "account_onboard_text" : "Signup for a free <br/> PayPal Business Account",
+    "pph_onboard_link" : "https://apply.paypal-apac.com/here/au/Step1A.aspx",
+    "onboard_target" : "_blank",
+    "webstore_link" : "https://www.paypal.com/webapps/mobilemerchant/activation/setup?locale.x=en_AU&country.x=AU&onbver=2.1&tasks=cart",
+    "rate_standard" : "1.95%",
+    "rate_keyin" : "2.9% + $0.30",
+    "support_phone" : "1800 729 725",
+    "reader_image" : "contactless.png",
+    "account_types": ["PREMIER", "BUSINESS"],
+    "account_upgrade_link" : "https://www.paypal.com/au/cgi-bin/webscr?cmd=_run-signup-upgrade-link"
+  },
+  "GB": {
+    "account_onboard_link" : "https://www.paypal.com/webapps/mobilemerchant/page/mpa/ob/geturl?onbver=2.0&country.x=GB&hs=login",
+    "account_onboard_text" : "Signup and Apply for <br/> PayPal Here Card Processing",
+    "pph_onboard_link" : "https://www.paypal.com/webapps/mobilemerchant/page/mpa/ob/geturl?onbver=2.0&country.x=GB&hs=login",
+    "onboard_target" : "_blank",
+    "webstore_link": "https://www.paypal.com/webapps/mobilemerchant/activation/setup?country.x=GB&onbver=2.1&tasks=cart",
+    "rate_standard" : "2.75%",
+    "rate_keyin" : "3.4% + 20p",
+    "support_phone" : "0800 358 9448",
+    "reader_image" : "contactless.png",
+    "account_types": ["PREMIER", "BUSINESS"],
+    "account_upgrade_link" : "https://www.paypal.com/gb/cgi-bin/webscr?cmd=_run-signup-upgrade-link"
+  },
+  "US": {
+    "account_onboard_link" : "https://www.paypal.com/signup-pph?partnertype=sdk&swiper=y&partner_id={partner_id}&partner_name={partner_name}&hs=login",
+    "account_onboard_text" : "Create an Account and Apply for <br/>PayPal Here Card Processing",
+    "pph_onboard_link" : "https://www.paypal.com/us/webapps/mobilemerchant/page/mpa/ob/geturl?onbver=2.0&country.&hs=login",
+    "onboard_target" : "_self",
+    "webstore_link": "https://www.paypal.com/store/",
+    "rate_standard" : "2.7%",
+    "rate_keyin" : "3.5% + $0.15",
+    "support_phone" : "1-855-787-4340",
+    "reader_image" : "contactless.png",
+    "account_types": ["PREMIER", "BUSINESS"],
+    "account_upgrade_link" : "https://www.paypal.com/us/cgi-bin/webscr?cmd=_run-signup-upgrade-link"
+  }
+}
