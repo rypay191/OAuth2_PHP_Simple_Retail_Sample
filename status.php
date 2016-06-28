@@ -7,6 +7,7 @@
 if(isset($_COOKIE['PayPal-Merchant-Access'])){ //if we have an active access token lets use it.
   
   $access_token = $_COOKIE['PayPal-Merchant-Access'];
+  $refresh_token = $_COOKIE['PayPal-Merchant-Refresh'];
 
 }else if(isset($_COOKIE['PayPal-Merchant-Refresh'])){
 
@@ -167,6 +168,42 @@ $paypal_account_retail_status = json_decode(curl_exec( $ch ));
           </div>
           <? } ?>
 
+          <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+              Developer / Testing Request and Responses </a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+
+            <h5>Refresh Token:</h5>
+            <pre><?=$refresh_token; ?></pre>
+            <h5>Access Token:</h5>
+            <pre><?=$access_token; ?></pre>
+            <h5>Retail SDK Token:</h5>
+            <? //lets quickly format the refresh URL for this token
+              $refresh_url = 'https://nommio.com/app/sample/auth/refresh.php?'; //update this to URL endpoint.
+              $refresh_url.='refresh_token='.urlencode(encrypt($refresh_token));  //We encrypt and append the refresh token, you might store this token a database instead.
+              if(isset($_GET['live'])){
+                $refresh_url.='&live=1'; //if this is a live token we can specify such.
+              }
+            ?>
+            <pre><? echo $sdk_token_decoded = '["'.$access_token.'",28800,"'.$refresh_url.'"]'; ?></pre>
+            <pre><?=$PP_ENVIRONEMNT_NAME; ?>:<?=base64_encode($sdk_token_decoded); ?></pre>
+            <h5>UserInfo Response</h5>
+            <pre><? print_r($paypal_account_details); ?></pre>
+            <h5>Retail Status Response</h5>
+            <pre><? print_r($paypal_account_retail_status); ?></pre>
+
+
+            </div>
+          </div>
+        </div>
+        </div>
+
 
 
         </div>
@@ -180,6 +217,7 @@ $paypal_account_retail_status = json_decode(curl_exec( $ch ));
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
   </body>
