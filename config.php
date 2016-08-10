@@ -35,7 +35,7 @@ if(isset($_GET['live'])){ //if it is live.
 
 //Lets Create the OAuth Login link for later. 
 $OAUTH_LINK =  $PAYPAL_AUTH_DOMAIN.'/webapps/auth/protocol/openidconnect/v1/authorize?';
-$OAUTH_LINK .= 'scope='.urlencode('https://uri.paypal.com/services/paypalhere email phone profile openid https://uri.paypal.com/services/paypalattributes address'); //These are the scopes required separated by spaces. Ensure your REST APP is enabled for each on developer.paypal.com
+$OAUTH_LINK .= 'scope='.urlencode('https://uri.paypal.com/services/paypalhere email phone profile openid https://uri.paypal.com/services/paypalattributes address https://uri.paypal.com/services/paypalattributes/business'); //These are the scopes required separated by spaces. Ensure your REST APP is enabled for each on developer.paypal.com
 $OAUTH_LINK .= '&response_type=code';
 $OAUTH_LINK .= '&client_id='.$PP_APP_CLIENT_ID; //Your apps client ID from the config file
 $OAUTH_LINK .= '&redirect_uri='.urlencode($PP_RETURN_URL); //Redirect URL must match exactly what is set on developer.paypal.com
